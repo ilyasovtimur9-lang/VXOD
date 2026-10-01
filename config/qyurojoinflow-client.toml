@@ -1,0 +1,19 @@
+[general]
+enabled = true
+debug = false
+
+[ui]
+enabled = true
+show_progress = true
+show_load_state = true
+# The in-game HUD is the default; a non-pausing full screen is opt-in.
+open_screen = false
+
+[sync]
+client_tick_budget_ms = 2.0
+max_cached_entries = 1000
+max_cached_bytes = 4194304
+
+[telemetry]
+enabled = true
+interval_ms = 1000

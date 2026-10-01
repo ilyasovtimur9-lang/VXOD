@@ -1,0 +1,77 @@
+[general]
+# Passive load monitoring continues while JoinFlow-owned task execution is disabled.
+enabled = true
+debug = false
+
+[adaptive]
+enabled = true
+auto_tuning = true
+eco_mspt = 12.0
+normal_mspt = 20.0
+protected_mspt = 35.0
+critical_mspt = 60.0
+emergency_mspt = 100.0
+
+[budget]
+join_min_ms = 0.25
+join_normal_ms = 4.0
+join_protected_ms = 2.0
+join_critical_ms = 0.75
+join_emergency_ms = 0.25
+post_join_normal_ms = 2.0
+post_join_protected_ms = 1.0
+post_join_critical_ms = 0.5
+background_normal_ms = 0.5
+background_protected_ms = 0.25
+
+[queue]
+max_concurrent_joins = 1
+max_queue_size = 100
+max_tasks_per_player = 500
+max_total_tasks = 5000
+max_pending_bytes_per_player = 262144
+allow_parallel_safe_tasks = true
+aging_interval_ticks = 200
+max_join_session_seconds = 120
+max_tasks_per_tick = 32
+
+[spike_guard]
+enabled = true
+spike_threshold_ms = 75.0
+spikes_before_critical = 2
+recovery_ticks = 20
+
+[network]
+enabled = true
+batching = true
+delta_sync = true
+max_packet_bytes = 24000
+max_telemetry_packets_per_second = 4
+max_outbound_packets_per_tick = 8
+max_outbound_queue_entries = 1024
+max_static_sync_bytes = 1048576
+
+[client]
+enabled = true
+send_progress = true
+send_server_state = true
+heartbeat_interval_ms = 1000
+
+[profiling]
+mode = "BASIC"
+history_size = 100
+slow_task_ms = 5.0
+very_slow_task_ms = 20.0
+critical_task_ms = 50.0
+write_reports = false
+write_full_report_every = 10
+
+[compatibility]
+origins = true
+apoli = true
+qyurowl = true
+qyurolevl = true
+
+[failsafe]
+enabled = true
+disable_failed_optional_adapter = true
